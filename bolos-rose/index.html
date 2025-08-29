@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delícias da Tia - Encomendas</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Quicksand -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="shortcut icon" href="./favIcon/favicon.ico" type="favIcon/x-icon">
+  <!-- Icone do site-->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <!-- Navbar responsiva -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="navbar-logo">
+        <img src="images/logo/Rose_logo-Rbg.png" alt="Logo Delícias da Tia" class="logo-navbar logo-navbar-grande" />
+      </a>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Abrir menu">
+        <i data-feather="menu" id="icon-menu"></i>
+        <i data-feather="x" id="icon-close" style="display:none;"></i>
+        <span id="badge-mobile-pedidos" class="badge-mobile-pedidos">0</span>
+      </button>
+      <ul class="navbar-links" id="navbar-links">
+        <li style="display: flex; align-items: center; justify-content: space-between;">
+          <a href="#" class="nav-link"><i data-feather="home"></i> Home</a>
+          <button id="btn-close-menu" aria-label="Fechar menu" style="display:none; background:none; border:none; cursor:pointer; margin-left:0.5em;"><i data-feather="x"></i></button>
+        </li>
+        <li><a href="#nossa-historia" class="nav-link"><i data-feather="book-open"></i> Nossa História</a></li>
+        <li><a href="#produtos" class="nav-link"><i data-feather="gift"></i> Produtos</a></li>
+        <li><a href="#contato" class="nav-link"><i data-feather="phone"></i> Contato</a></li>
+        <li><a href="#" class="nav-link" id="btn-pedidos"><i data-feather="shopping-cart"></i> Pedidos <span id="contador-pedidos" class="contador-pedidos">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Barra de contatos horizontal no topo -->
+  <div class="barra-contatos">
+    <span><i data-feather="mail"></i> contato@ConfeitariaDoceLar1983.com</span>
+    <span><i data-feather="facebook"></i> ConfeitariaDoceLar1983</span>
+    <span><i data-feather="instagram"></i> @ConfeitariaDoceLar1983</span>
+    <span><i data-feather="phone"></i> (49) 98415-1363</span>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header data-aos="fade-down">
+    <!-- Removido o texto e ícone do cabeçalho -->
+  </header>
+
+  <!-- Comentário: Aqui ficaria o botão/ícone de Pedidos (Carrinho) na navbar -->
+  <!-- <nav> ... <i data-feather="shopping-cart"></i> ... </nav> -->
+
+  <!-- Galeria de Produtos como Carrossel/Flex -->
+  <section class="produtos" data-aos="fade-up" id="produtos">
+    <!-- Desktop: título e cards de produtos -->
+    <h2 class="produtos-titulo desktop-only">Nossos Produtos <i data-feather="gift"></i></h2>
+    <div class="carrossel-produtos desktop-only">
+      <button class="carrossel-btn" id="carrossel-prev" aria-label="Anterior"><i data-feather="chevron-left"></i></button>
+      <div class="galeria-carrossel" id="galeria-carrossel">
+        <!-- Card 1 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+          <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div>
+          <h3>Bolo de Chocolate</h3>
+          <div class="preco-produto">R$ 35,00</div>
+          <p>Descrição breve do produto 1.</p>
+          <button class="btn-adicionar" data-produto="Produto 1">Adicionar</button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+          <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-2.jpg');"></div>
+          <h3>Bolo de Cenoura</h3>
+          <div class="preco-produto">R$ 35,00</div>
+          <p>Descrição breve do produto 2.</p>
+          <button class="btn-adicionar" data-produto="Produto 2">Adicionar</button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+          <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-3.jpg');"></div>
+          <h3>Bolo de Morango</h3>
+          <div class="preco-produto">R$ 35,00</div>
+          <p>Descrição breve do produto 3.</p>
+          <button class="btn-adicionar" data-produto="Produto 3">Adicionar</button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+          <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-4.jpg');"></div>
+          <h3>Brigadeiro</h3>
+          <div class="preco-produto">R$ 4,00</div>
+          <p>Descrição breve do produto 4.</p>
+          <button class="btn-adicionar" data-produto="Produto 4">Adicionar</button>
+        </div>
+        <!-- Card 5 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+          <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-5.jpg');"></div>
+          <h3>Beijinho</h3>
+          <div class="preco-produto">R$ 4,00</div>
+          <p>Descrição breve do produto 5.</p>
+          <button class="btn-adicionar" data-produto="Produto 5">Adicionar</button>
+        </div>
+        <!-- Card 6 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+          <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-6.jpg');"></div>
+          <h3>Mini Pastel</h3>
+          <div class="preco-produto">R$ 6,00</div>
+          <p>Descrição breve do produto 6.</p>
+          <button class="btn-adicionar" data-produto="Produto 6">Adicionar</button>
+        </div>
+        <!-- Card 7 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+            <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div>
+            <h3>Mini coxinhas</h3>
+            <div class="preco-produto">R$ 6,00</div>
+            <p>Descrição breve do produto 1.</p>
+            <button class="btn-adicionar" data-produto="Produto 1">Adicionar</button>
+          </div>
+          <!-- Card 8 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+            <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div>
+            <h3>Empadao</h3>
+            <div class="preco-produto">R$ 6,00</div>
+            <p>Descrição breve do produto 1.</p>
+            <button class="btn-adicionar" data-produto="Produto 1">Adicionar</button>
+          </div>
+          <!-- Card 9 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+            <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div>
+            <h3>Torta Salgada</h3>
+            <div class="preco-produto">R$ 6,00</div>
+            <p>Descrição breve do produto 1.</p>
+            <button class="btn-adicionar" data-produto="Produto 1">Adicionar</button>
+          </div>
+          <!-- Card 10 -->
+        <div class="card-produto animate__animated animate__fadeIn">
+            <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div>
+            <h3>Torta de Bolacha</h3>
+            <div class="preco-produto">R$ 6,00</div>
+            <p>Descrição breve do produto 1.</p>
+            <button class="btn-adicionar" data-produto="Produto 1">Adicionar</button>
+          </div>
+        <!-- Adicione mais cards conforme desejar -->
+      </div>
+      <button class="carrossel-btn" id="carrossel-next" aria-label="Próximo"><i data-feather="chevron-right"></i></button>
+    </div>
+    <!-- Mobile: cards de categoria -->
+    <div class="produtos-titulo-mobile mobile-only">
+      <h2>Produtos <i data-feather="gift"></i></h2>
+    </div>
+    <div class="mobile-categorias-produtos mobile-only">
+      <div class="card-produto card-categoria-mobile-carousel" data-modal="modal-bolos-tortas">
+        <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div>
+        <h3>Bolos e Tortas</h3>
+      </div>
+      <div class="card-produto card-categoria-mobile-carousel" data-modal="modal-salgados">
+        <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-2.jpg');"></div>
+        <h3>Salgados</h3>
+      </div>
+      <div class="card-produto card-categoria-mobile-carousel" data-modal="modal-docinhos">
+        <div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-3.jpg');"></div>
+        <h3>Docinhos</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Nossa História -->
+  <section class="nossa-historia" data-aos="fade-right" id="nossa-historia">
+    <h2>Nossa História <i data-feather="book-open"></i></h2>
+    <p>A Rose começou a fazer bolos em casa em 2010, vendendo para vizinhos e amigos. Com o tempo, seu talento e carinho pelos doces conquistaram a todos. Hoje, continua com a mesma paixão de quando começou, trazendo sabor e alegria para cada cliente. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint voluptatum doloribus odit, soluta quo libero laboriosam dolores alias, fugit quasi corrupti minima tempore totam neque repellendus? Assumenda eligendi ab recusandae.</p>
+  </section>
+
+  <!-- Contato Mobile (apenas mobile) -->
+  <div class="contato-mobile mobile-only">
+    <span><i data-feather="mail"></i> contato@deliciasdatia.com</span>
+    <span><i data-feather="facebook"></i> ConfeitariaDoceLar1983</span>
+    <span><i data-feather="instagram"></i> @ConfeitariaDoceLar1983</span>
+    <span><i data-feather="phone"></i> (49) 98415-1363</span>
+  </div>
+
+  <!-- Modal do Carrinho de Pedidos -->
+  <div id="modal-carrinho" class="modal-carrinho">
+    <div class="modal-carrinho-content">
+      <span class="modal-carrinho-close" id="fechar-carrinho">&times;</span>
+      <h2>Seus Pedidos</h2>
+      <ul id="lista-carrinho"></ul>
+      <button id="btn-enviar-pedido" class="btn-enviar-pedido">Enviar Pedido</button>
+    </div>
+  </div>
+  <!-- Modal de Envio de Pedido (formulário de contato) -->
+  <div id="modal-contato" class="modal-contato">
+    <div class="modal-contato-content">
+      <span class="modal-contato-close" id="fechar-contato">&times;</span>
+      <h2>Informações para Contato</h2>
+      <form id="form-pedido-modal">
+        <label for="nome">Nome *</label>
+        <input type="text" id="nome-modal" name="nome" required>
+        <label for="telefone">Telefone para contato *</label>
+        <input type="tel" id="telefone-modal" name="telefone" required pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(11) 91234-5678">
+        <label for="data">Data da entrega *</label>
+        <input type="date" id="data-modal" name="data" required>
+        <label for="hora">Horário da entrega *</label>
+        <input type="time" id="hora-modal" name="hora" required>
+        <label for="obs">Observações</label>
+        <textarea id="obs-modal" name="obs" placeholder="Ex: sem lactose, tema, etc."></textarea>
+        <button type="submit" class="btn-finalizar-pedido"><i data-feather="send"></i> Finalizar Pedido via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modais das categorias mobile -->
+  <div id="modal-bolos-tortas" class="modal-categoria">
+    <div class="modal-categoria-content">
+      <span class="modal-categoria-close">&times;</span>
+      <h2>Bolos e Tortas</h2>
+      <div class="modal-categoria-cards">
+        <div class="card-produto animate__animated animate__fadeIn active"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div><h3>Produto 1</h3><div class="preco-produto">R$ 35,00</div><p>Descrição breve do produto 1.</p><button class="btn-adicionar-modal" data-produto="Produto 1">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-2.jpg');"></div><h3>Produto 2</h3><div class="preco-produto">R$ 35,00</div><p>Descrição breve do produto 2.</p><button class="btn-adicionar-modal" data-produto="Produto 2">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-3.jpg');"></div><h3>Produto 3</h3><div class="preco-produto">R$ 35,00</div><p>Descrição breve do produto 3.</p><button class="btn-adicionar-modal" data-produto="Produto 3">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-4.jpg');"></div><h3>Produto 4</h3><div class="preco-produto">R$ 35,00</div><p>Descrição breve do produto 4.</p><button class="btn-adicionar-modal" data-produto="Produto 4">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-5.jpg');"></div><h3>Produto 5</h3><div class="preco-produto">R$ 35,00</div><p>Descrição breve do produto 5.</p><button class="btn-adicionar-modal" data-produto="Produto 5">Adicionar</button></div>
+      </div>
+      <div class="modal-categoria-nav">
+        <button class="modal-categoria-btn" data-nav="prev"><i data-feather="chevron-left"></i></button>
+        <button class="modal-categoria-btn" data-nav="next"><i data-feather="chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-salgados" class="modal-categoria">
+    <div class="modal-categoria-content">
+      <span class="modal-categoria-close">&times;</span>
+      <h2>Salgados</h2>
+      <div class="modal-categoria-cards">
+        <div class="card-produto animate__animated animate__fadeIn active"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div><h3>Produto 1</h3><div class="preco-produto">R$ 6,00</div><p>Descrição breve do produto 1.</p><button class="btn-adicionar-modal" data-produto="Produto 1">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-2.jpg');"></div><h3>Produto 2</h3><div class="preco-produto">R$ 6,00</div><p>Descrição breve do produto 2.</p><button class="btn-adicionar-modal" data-produto="Produto 2">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-3.jpg');"></div><h3>Produto 3</h3><div class="preco-produto">R$ 6,00</div><p>Descrição breve do produto 3.</p><button class="btn-adicionar-modal" data-produto="Produto 3">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-4.jpg');"></div><h3>Produto 4</h3><div class="preco-produto">R$ 6,00</div><p>Descrição breve do produto 4.</p><button class="btn-adicionar-modal" data-produto="Produto 4">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-5.jpg');"></div><h3>Produto 5</h3><div class="preco-produto">R$ 6,00</div><p>Descrição breve do produto 5.</p><button class="btn-adicionar-modal" data-produto="Produto 5">Adicionar</button></div>
+      </div>
+      <div class="modal-categoria-nav">
+        <button class="modal-categoria-btn" data-nav="prev"><i data-feather="chevron-left"></i></button>
+        <button class="modal-categoria-btn" data-nav="next"><i data-feather="chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-docinhos" class="modal-categoria">
+    <div class="modal-categoria-content">
+      <span class="modal-categoria-close">&times;</span>
+      <h2>Docinhos</h2>
+      <div class="modal-categoria-cards">
+        <div class="card-produto animate__animated animate__fadeIn active"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-1.jpg');"></div><h3>Produto 1</h3><div class="preco-produto">R$ 4,00</div><p>Descrição breve do produto 1.</p><button class="btn-adicionar-modal" data-produto="Produto 1">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-2.jpg');"></div><h3>Produto 2</h3><div class="preco-produto">R$ 4,00</div><p>Descrição breve do produto 2.</p><button class="btn-adicionar-modal" data-produto="Produto 2">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-3.jpg');"></div><h3>Produto 3</h3><div class="preco-produto">R$ 4,00</div><p>Descrição breve do produto 3.</p><button class="btn-adicionar-modal" data-produto="Produto 3">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-4.jpg');"></div><h3>Produto 4</h3><div class="preco-produto">R$ 4,00</div><p>Descrição breve do produto 4.</p><button class="btn-adicionar-modal" data-produto="Produto 4">Adicionar</button></div>
+        <div class="card-produto animate__animated animate__fadeIn"><div class="img-produto img-produto-branco" style="background-image: url('images/bolos/menu-5.jpg');"></div><h3>Produto 5</h3><div class="preco-produto">R$ 4,00</div><p>Descrição breve do produto 5.</p><button class="btn-adicionar-modal" data-produto="Produto 5">Adicionar</button></div>
+      </div>
+      <div class="modal-categoria-nav">
+        <button class="modal-categoria-btn" data-nav="prev"><i data-feather="chevron-left"></i></button>
+        <button class="modal-categoria-btn" data-nav="next"><i data-feather="chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer id="contato" data-aos="fade-up" class="animate__animated animate__fadeInUp">
+    <div class="footer-flex">
+      <div class="barra-contatos barra-contatos-rodape">
+        <span><i data-feather="mail"></i> contato@deliciasdatia.com</span>
+        <span><i data-feather="facebook"></i> ConfeitariaDoceLar1983</span>
+        <span><i data-feather="instagram"></i> ConfeitariaDoceLar1983</span>
+        <span><i data-feather="phone"></i> (49) 98415-1363</span>
+      </div>
+      <div class="mapa-localizacao">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3529.4929976640788!2d-50.303548!3d-27.7945921!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e0192962ed25e9%3A0xfe0a5e6a97de7563!2sR.%20Pedro%20G%C3%A1spar%20Fernandes%20-%20Gethal%2C%20Lages%20-%20SC%2C%2088520-285%2C%20Brasil!5e0!3m2!1spt-BR!2suk!4v1751475004760!5m2!1spt-BR!2suk" width="100%" height="220" style="border:0; border-radius:10px; margin-top:1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <p class="copyright-rodape">&copy; 2024 Delícias da Tia. Todos os direitos reservados.</p>
+  </footer>
+  <!-- Divisória suave entre produtos e nossa história (mais visível) -->
+  <hr class="divisoria-suave divisoria-mais-visivel" />
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <!-- AOS (Animate On Scroll) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    feather.replace();
+    AOS.init();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html> 
+
